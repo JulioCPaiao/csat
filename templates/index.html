@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcular Csat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #4d6c75;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            max-width: 400px;
+            padding: 60px;
+            background-color: #719699;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #0a0a0a;
+            text-align: center;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #080808;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #080000;
+        }
+        
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            border: 2px solid #0c0c0c;
+            border-radius: 4px;
+        }
+        
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: #ff00ea;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid #0c0c0c;
+            transition: background-color 0.2s;
+            margin-left: 5px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #75014f;
+            transition: background-color 0.2s;
+        }
+        
+        button[type="submit"]:active {
+            background-color: #5f0340;
+            margin-left: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        p {
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Csat</h1>
+        
+        <h2>Resolved</h2>
+        <form onsubmit="calculatePositiveResolved(event)">
+            <label for="total-csat">Total Csat:</label>
+            <input type="number" id="total-csat" required>
+            
+            <label for="total-resolved">Total Resolved:</label>
+            <input type="number" id="total-resolved" required>
+            
+            <button type="submit">Calculate</button>
+        </form>
+        <p id="positive-resolved-result"></p>
+
+        <h2>Positive Experience</h2>
+        <form onsubmit="calculatePositiveExperience(event)">
+            <label for="total-csat-2">Total Csat:</label>
+            <input type="number" id="total-csat-2" required>
+            
+            <label for="total-5">Total 5:</label>
+            <input type="number" id="total-5" required>
+            
+            <label for="total-4">Total 4:</label>
+            <input type="number" id="total-4" required>
+            
+            <button type="submit">Calculate</button>
+        </form>
+        <p id="positive-experience-result"></p>
+    </div>
+</body>
+</html>
